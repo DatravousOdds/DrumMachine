@@ -1,0 +1,61 @@
+$secondaryColor: #004baa;
+$primaryColor: #002555;
+$thirdColor: #0070ff;
+$fontFamily: 'Arial' sans-serif;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $primaryColor;
+  font-family: $fontFamily;
+  color: white;
+  
+}
+
+main {
+  
+ 
+  
+
+  .wrapper {
+  background-color: transparent;
+  margin: 5rem auto;
+  width: 500px;
+  height: 250px;
+  border-radius: 4px;
+  padding: 1rem;
+  border: 2px solid #0070ff;
+  // position: relative;
+
+    .drumpalette-container {
+      display: inline-block;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      position: relative;
+      
+      margin: 1px;
+     
+      
+      
+      
+      
+    }
+  }
+
+  .drum-pad {
+    position: relative;
+    float: left;
+    height: 70px;
+    width: 80px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 2px;
+  }
+}
+
