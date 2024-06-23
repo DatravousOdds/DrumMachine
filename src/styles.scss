@@ -1,8 +1,9 @@
 $secondaryColor: #004baa;
 $primaryColor: #002555;
 $thirdColor: #0070ff;
-$fontFamily: 'Arial' sans-serif;
-
+$fontFamily: sans-serif;
+$margin-1: 0.25rem;
+$headerMargin-1: 3rem;
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,17 +19,28 @@ body {
 
 main {
   
- 
-  
+  .btns-container {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+  }
+  header {
+    text-align: center;
+    margin-top: $headerMargin-1;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    // border: 1px solid red;
+  }
 
   .wrapper {
   background-color: transparent;
   margin: 5rem auto;
   width: 500px;
   height: 250px;
-  border-radius: 4px;
+  border-radius: 3px;
   padding: 1rem;
-  border: 2px solid #0070ff;
+  border: 3px solid #fff;
+    background-color: $secondaryColor;
   // position: relative;
 
     .drumpalette-container {
@@ -37,8 +49,8 @@ main {
       justify-content: center;
       width: 300px;
       position: relative;
+      // border: 1px solid red;
       
-      margin: 1px;
      
       
       
@@ -50,12 +62,18 @@ main {
   .drum-pad {
     position: relative;
     float: left;
-    height: 70px;
-    width: 80px;
+    height: 60px;
+    width: 75px;
     border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    padding: 1.2rem;
     box-sizing: border-box;
-    background-color: white;
-    margin: 2px;
+    background-color: $thirdColor;
+    box-shadow: 2px 2px 4px black;
+    margin: $margin-1;
+    text-align: center;
+    margin-top: $margin-1;
   }
 }
 
