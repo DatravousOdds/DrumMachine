@@ -1,7 +1,10 @@
+import Buttons from './Buttons';
+
 const Display = () => {
   return (
     <>
       <div className="wrapper">
+        
         <div className="drumpalette">
           <div className="drumpalette-container">
             <div className="drum-pad">
@@ -32,7 +35,9 @@ const Display = () => {
               <audio></audio>C
             </div>
           </div>
+          
         </div>
+        <Buttons/>
       </div>
     </>
   );

@@ -17,11 +17,19 @@ body {
   
 }
 
+.drumpalette-container {
+  // border: 2px solid red;
+}
+
 main {
   
   .btns-container {
-    width: 100px;
-    height: 100px;
+    width: 11rem;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: space-between;
     border: 1px solid red;
   }
   header {
@@ -33,9 +41,11 @@ main {
   }
 
   .wrapper {
-  background-color: transparent;
+justify-content: center;
+    align-items: center;
   margin: 5rem auto;
   width: 500px;
+  display: flex;
   height: 250px;
   border-radius: 3px;
   padding: 1rem;
@@ -53,7 +63,14 @@ main {
       
      
       
-      
+      .btn-0 {
+        border: 2px solid red;
+      }
+
+      .small-btn {
+        display: flex;
+        justify-content: center;
+      }
       
       
     }
