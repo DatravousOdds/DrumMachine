@@ -1,43 +1,112 @@
-import Buttons from './Buttons';
+import Buttons from "./Buttons";
+import { useState } from "react";
+import heater1 from "/audio/Heater-1.mp3";
 
 const Display = () => {
+  const [drum, setDrum] = useState("");
+
+  const handleDrumPadClick = (event) => {
+    const drumPad = event.currentTarget;
+    console.log(drumPad);
+    const audio = drumPad.querySelector("audio");
+    const audioName = drumPad.id;
+    if (audio) {
+      audio.play();
+    }
+
+    if (audioName) {
+      console.log(audioName);
+      setDrum(audioName);
+    }
+  };
+
   return (
     <>
       <div className="wrapper">
-        
         <div className="drumpalette">
           <div className="drumpalette-container">
-            <div className="drum-pad">
-              <audio></audio>Q
+            <div
+              className="drum-pad"
+              id="Heater-1"
+              onClick={handleDrumPadClick}
+            >
+              <audio className="clip" src={heater1} id="Q"></audio>Q
             </div>
             <div className="drum-pad">
-              <audio></audio>W
+              <audio
+                className="clip"
+                onClick={handleDrumPadClick}
+                src="/audio/Heater-2.mp3"
+                id="W"
+              ></audio>
+              W
             </div>
             <div className="drum-pad">
-              <audio></audio>E
+              E
+              <audio
+                className="clip"
+                onClick={handleDrumPadClick}
+                src="/audio/Heater-3.mp3"
+                id="E"
+              ></audio>
             </div>
             <div className="drum-pad">
-              <audio></audio>A
+              A
+              <audio
+                className="clip"
+                onClick={handleDrumPadClick}
+                src=""
+                id="A"
+              ></audio>
             </div>
             <div className="drum-pad">
-              <audio></audio>S
+              <audio
+                className="clip"
+                onClick={handleDrumPadClick}
+                src=""
+                id="S"
+              ></audio>
+              S
             </div>
             <div className="drum-pad">
-              <audio></audio>D
+              D{" "}
+              <audio
+                className="clip"
+                onClick={handleDrumPadClick}
+                src=""
+                id="D"
+              ></audio>
             </div>
             <div className="drum-pad">
-              <audio></audio>Z
+              <audio
+                className="clip"
+                onClick={handleDrumPadClick}
+                src=""
+                id="Z"
+              ></audio>
+              Z
             </div>
             <div className="drum-pad">
-              <audio></audio>X
+              <audio
+                className="clip"
+                onClick={handleDrumPadClick}
+                src=""
+                id="X"
+              ></audio>
+              X
             </div>
             <div className="drum-pad">
-              <audio></audio>C
+              <audio
+                className="clip"
+                onClick={handleDrumPadClick}
+                src=""
+                id="C"
+              ></audio>
+              C
             </div>
           </div>
-          
         </div>
-        <Buttons/>
+        <Buttons />
       </div>
     </>
   );

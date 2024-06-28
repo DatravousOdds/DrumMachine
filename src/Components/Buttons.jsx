@@ -1,6 +1,8 @@
 const Buttons = () => {
+
+  
   const btnStyles = {
-    backgroundColor: "white",
+    backgroundColor: "black",
     color: "black",
     height: 40,
     padding: "",
@@ -20,7 +22,7 @@ const Buttons = () => {
     alignItems: "center",
     flexDirection: "column",
     margin: "0.25rem",
-    border: "2px solid red",
+    
   };
 
   const switchBtn = {
@@ -30,19 +32,22 @@ const Buttons = () => {
   const swStyles = {
     background: "red",
     width: "20rem",
-    
-  }
+  };
   return (
     <>
       <div className="btns-container">
         <div style={smallBtnStyles}>
           <div style={btnStyles}>
-            <div style={switchBtn}>
-              <div style={swStyles}></div>
-              <div></div>
-            </div>
+            <div className="switch"></div>
           </div>
-          <div style={btnStyles}>Button 2</div>
+
+          <div className="output">
+            
+          </div>
+          
+          <div style={btnStyles}>
+            <div className="switch"></div>
+          </div>
         </div>
       </div>
     </>

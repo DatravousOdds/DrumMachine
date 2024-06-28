@@ -10,6 +10,12 @@ $headerMargin-1: 3rem;
   padding: 0;
 }
 
+.switch {
+  width: 50%;
+  background: blue;
+  height: 100%;
+}
+
 body {
   background-color: $primaryColor;
   font-family: $fontFamily;
@@ -89,8 +95,16 @@ justify-content: center;
     background-color: $thirdColor;
     box-shadow: 2px 2px 4px black;
     margin: $margin-1;
+    cursor: pointer;
     text-align: center;
     margin-top: $margin-1;
+  }
+
+  .output {
+    width: 9.5rem;
+    height: 4rem;
+    color: white;
+    background-color: $primaryColor;
   }
 }
 
