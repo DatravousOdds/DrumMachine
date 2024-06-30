@@ -2,23 +2,8 @@ import Buttons from "./Buttons";
 import { useState } from "react";
 import heater1 from "/audio/Heater-1.mp3";
 
-const Display = () => {
-  const [drum, setDrum] = useState("");
-
-  const handleDrumPadClick = (event) => {
-    const drumPad = event.currentTarget;
-    console.log(drumPad);
-    const audio = drumPad.querySelector("audio");
-    const audioName = drumPad.id;
-    if (audio) {
-      audio.play();
-    }
-
-    if (audioName) {
-      console.log(audioName);
-      setDrum(audioName);
-    }
-  };
+const Display = ({handleDrumPadClick}) => {
+  
 
   return (
     <>
