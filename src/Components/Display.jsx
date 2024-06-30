@@ -1,94 +1,44 @@
 import Buttons from "./Buttons";
-import { useState } from "react";
+
 import heater1 from "/audio/Heater-1.mp3";
+import heater2 from "/audio/Heater-2.mp3";
+import heater3 from "/audio/Heater-3.mp3";
+import heater4 from "/audio/Heater-4_1.mp3";
+import cev_h2 from "/audio/Cev-H2.mp3";
+import dscOh from "/audio/Dsc_Oh.mp3";
+import kick from "/audio/Kick_n_Hat.mp3";
+import rp4Kick from "/audiopath/RP4_KICK_1.mp3
+import heater6 from "/audio/Heater-6.mp3";
+const audioPath = [
+  { id: "Q", src: heater1 },
+  { id: "W", src: heater2 },
+  { id: "E", src: heater3 },
+  { id: "A", src: heater4 },
+  {id: "S", src: cev_h2},
+  {id: "D", src: dscOh},
+  {id: "Z", src: kick},
+  {id: "X", src: rp4Kick},
+  {id: "C", src: heater6}
+];
 
-const Display = ({handleDrumPadClick}) => {
-  
-
+const Display = ({ handleDrumPadClick }) => {
   return (
     <>
       <div className="wrapper">
         <div className="drumpalette">
           <div className="drumpalette-container">
-            <div
-              className="drum-pad"
-              id="Heater-1"
-              onClick={handleDrumPadClick}
-            >
-              <audio className="clip" src={heater1} id="Q"></audio>Q
-            </div>
-            <div className="drum-pad">
-              <audio
-                className="clip"
-                onClick={handleDrumPadClick}
-                src="/audio/Heater-2.mp3"
-                id="W"
-              ></audio>
-              W
-            </div>
-            <div className="drum-pad">
-              E
-              <audio
-                className="clip"
-                onClick={handleDrumPadClick}
-                src="/audio/Heater-3.mp3"
-                id="E"
-              ></audio>
-            </div>
-            <div className="drum-pad">
-              A
-              <audio
-                className="clip"
-                onClick={handleDrumPadClick}
-                src=""
-                id="A"
-              ></audio>
-            </div>
-            <div className="drum-pad">
-              <audio
-                className="clip"
-                onClick={handleDrumPadClick}
-                src=""
-                id="S"
-              ></audio>
-              S
-            </div>
-            <div className="drum-pad">
-              D{" "}
-              <audio
-                className="clip"
-                onClick={handleDrumPadClick}
-                src=""
-                id="D"
-              ></audio>
-            </div>
-            <div className="drum-pad">
-              <audio
-                className="clip"
-                onClick={handleDrumPadClick}
-                src=""
-                id="Z"
-              ></audio>
-              Z
-            </div>
-            <div className="drum-pad">
-              <audio
-                className="clip"
-                onClick={handleDrumPadClick}
-                src=""
-                id="X"
-              ></audio>
-              X
-            </div>
-            <div className="drum-pad">
-              <audio
-                className="clip"
-                onClick={handleDrumPadClick}
-                src=""
-                id="C"
-              ></audio>
-              C
-            </div>
+            {audioPath.map((pad) => (
+          <div id={pad.id} className="drum-pad" onClick={handleDrumPadClick}>
+            <audio src={pad.src}></audio>{pad.id}</div>
+            ))}
+            
+            
+            
+            
+            
+            
+            
+            
           </div>
         </div>
         <Buttons />
