@@ -10,6 +10,7 @@ const Display = ({ handleDrumPadClick, audioPath }) => {
           <div className="drumpalette-container">
             {audioPath.map((pad) => (
               <div
+                key={pad.id}
                 id={pad.id}
                 className="drum-pad"
                 onClick={handleDrumPadClick}
