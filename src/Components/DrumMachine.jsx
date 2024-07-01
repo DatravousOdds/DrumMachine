@@ -4,6 +4,17 @@ import { useState } from "react";
 
 const DrumMachine = () => {
   const header = "Drum Machine App";
+  const audioPath = [
+    { id: "Q", src: "/audio/Heater-1.mp3" },
+    { id: "W", src: "/audio/Heater-2.mp3" },
+    { id: "E", src: "/audio/Heater-3.mp3" },
+    { id: "A", src: "/audio/Heater-4_1.mp3" },
+    { id: "S", src: "/audio/Cev_H2.mp3" },
+    { id: "D", src: "/audio/Dsc_Oh.mp3" },
+    { id: "Z", src: "/audio/Kick_n_Hat.mp3" },
+    { id: "X", src: "/audiopath/RP4_KICK_1.mp3" },
+    { id: "C", src: "/audio/Heater-6.mp3" },
+  ];
   const [drum, setDrum] = useState("");
 
   const handleDrumPadClick = (event) => {
@@ -25,7 +36,7 @@ const DrumMachine = () => {
     <>
       <header>{header}</header>
       <div id="drum-machine">
-        <Display handleDrumPadClick={handleDrumPadClick}/>
+        <Display handleDrumPadClick={handleDrumPadClick} audioPath={audioPath} />
       </div>
     </>
   );

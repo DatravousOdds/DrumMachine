@@ -1,10 +1,8 @@
 const Buttons = () => {
-
-  
   const btnStyles = {
     backgroundColor: "black",
     color: "black",
-    height: 40,
+    height: 20,
     padding: "",
     margin: "1rem",
     border: "2px solid black",
@@ -12,7 +10,7 @@ const Buttons = () => {
     cursor: "pointer",
     fontSize: "1.2rem",
     fontWeight: "bold",
-    width: 100,
+    width: 50,
     textAlign: "center",
   };
 
@@ -22,7 +20,6 @@ const Buttons = () => {
     alignItems: "center",
     flexDirection: "column",
     margin: "0.25rem",
-    
   };
 
   const switchBtn = {
@@ -37,15 +34,19 @@ const Buttons = () => {
     <>
       <div className="btns-container">
         <div style={smallBtnStyles}>
+          Power
           <div style={btnStyles}>
             <div className="switch"></div>
           </div>
-
           <div className="output">
-            
+            <div>
+              <p>Testing</p>
+            </div>
           </div>
-          
+          <div className="volume-container"></div>
+          Bank
           <div style={btnStyles}>
+            
             <div className="switch"></div>
           </div>
         </div>
