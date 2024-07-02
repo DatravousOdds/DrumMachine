@@ -6,6 +6,7 @@ const Buttons = () => {
     padding: "",
     margin: "1rem",
     border: "2px solid black",
+    display: "flex",
     borderRadius: "2px",
     cursor: "pointer",
     fontSize: "1.2rem",
@@ -20,6 +21,7 @@ const Buttons = () => {
     alignItems: "center",
     flexDirection: "column",
     margin: "0.25rem",
+    
   };
 
   const switchBtn = {
@@ -34,21 +36,30 @@ const Buttons = () => {
     <>
       <div className="btns-container">
         <div style={smallBtnStyles}>
-          Power
-          <div style={btnStyles}>
-            <div className="switch"></div>
+          
+          <div className="control">
+            <div style={{fontWeight:600}}>Power</div>
+            <div className="select">
+              <div className="inner"></div>
+            </div>
           </div>
+          
           <div className="output">
             <div>
               <p>Testing</p>
             </div>
           </div>
-          <div className="volume-container"></div>
-          Bank
-          <div style={btnStyles}>
-            
-            <div className="switch"></div>
+          <div className="volume-container">
+            <div className="volume-inner"></div>
           </div>
+          
+          <div className="control">
+            <div style={{fontWeight:600}}>Volume</div>
+            <div className="select">
+              <div className="inner"></div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </>
