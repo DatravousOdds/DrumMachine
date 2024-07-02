@@ -1,6 +1,4 @@
-const Buttons = ({volumeChange, volume }) => {
-  
-
+const Buttons = ({ volumeChange, volume }) => {
   const smallBtnStyles = {
     display: "flex",
     justifyContent: "center",
@@ -9,9 +7,6 @@ const Buttons = ({volumeChange, volume }) => {
     margin: "0.25rem",
   };
 
-  
-
-  
   return (
     <>
       <div className="btns-container">
@@ -24,12 +19,18 @@ const Buttons = ({volumeChange, volume }) => {
           </div>
 
           <div className="output">
-            <div>
-              Volume: {volume}
-            </div>
+            <div>{volume ? `Volume: ${volume}` : ""}</div>
           </div>
           <div className="volume-container">
-            <input type="range" id="vol" min={1} max={100} value={1} onChange={volumeChange}/>
+            <input
+              type="range"
+              id="vol"
+              min={0}
+              max={100}
+              value={volume}
+              
+              onChange={volumeChange}
+            />
           </div>
 
           <div className="control">
