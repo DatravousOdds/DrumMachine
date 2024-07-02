@@ -1,4 +1,8 @@
-const Buttons = ({ volumeChange, volume }) => {
+import { useRef } from "react";
+
+const Buttons = ({ volumeChange, volume, handleSwitchChange }) => {
+ 
+  
   const smallBtnStyles = {
     display: "flex",
     justifyContent: "center",
@@ -11,15 +15,15 @@ const Buttons = ({ volumeChange, volume }) => {
     <>
       <div className="btns-container">
         <div style={smallBtnStyles}>
-          <div className="control">
+          <div className="control" onClick={handleSwitchChange}>
             <div style={{ fontWeight: 600 }}>Power</div>
-            <div className="select">
+            <div  className="select">
               <div className="inner"></div>
             </div>
           </div>
 
           <div className="output">
-            <div>{volume ? `Volume: ${volume}` : ""}</div>
+            <div>{volume}</div>
           </div>
           <div className="volume-container">
             <input
@@ -28,14 +32,13 @@ const Buttons = ({ volumeChange, volume }) => {
               min={0}
               max={100}
               value={volume}
-              
               onChange={volumeChange}
             />
           </div>
 
-          <div className="control">
+          <div className="control" onClick={handleSwitchChange}>
             <div style={{ fontWeight: 600 }}>Volume</div>
-            <div className="select">
+            <div  className="select">
               <div className="inner"></div>
             </div>
           </div>

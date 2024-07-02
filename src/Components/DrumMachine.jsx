@@ -1,6 +1,6 @@
 import Display from "./Display";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const DrumMachine = () => {
   const header = "Drum Machine App";
@@ -17,12 +17,26 @@ const DrumMachine = () => {
   ];
   const [drum, setDrum] = useState("");
   const [vol, setVolume] = useState();
+  const [powerSwitch, setPowerSwitch] = useState(false);
+  const [volumeSwitch, setVolumeSwitch] = useState(false);
 
+  // handles switch toggle
+  const handleSwitchChange = () => {
+    if (!powerSwitch || !volumeSwitch) {
+      setPowerSwitch(true);
+      setVolumeSwitch(true);
+    }
+    setPowerSwitch(false);
+    setVolumeSwitch(false);
+  };
+
+  // handles volume change
   const handleVolumeChange = (e) => {
     const value = e.target.value;
     setVolume(value);
   };
 
+  // handles drum pad interactions
   const handleDrumPadClick = (event) => {
     const drumPad = event.currentTarget;
     console.log(drumPad);
@@ -47,6 +61,7 @@ const DrumMachine = () => {
           audioPath={audioPath}
           volumeChange={handleVolumeChange}
           volume={vol}
+          handleSwitchChange={handleSwitchChange}
         />
       </div>
     </>

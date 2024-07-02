@@ -1,8 +1,12 @@
 import Buttons from "./Buttons";
 
-
-
-const Display = ({ handleDrumPadClick, audioPath, volumeChange, volume }) => {
+const Display = ({
+  handleDrumPadClick,
+  audioPath,
+  volumeChange,
+  volume,
+  handleSwitchChange,
+}) => {
   return (
     <>
       <div className="wrapper">
@@ -21,7 +25,7 @@ const Display = ({ handleDrumPadClick, audioPath, volumeChange, volume }) => {
             ))}
           </div>
         </div>
-        <Buttons volumeChange={volumeChange} volume={volume} />
+        <Buttons volumeChange={volumeChange} volume={volume} handleSwitchChange={handleSwitchChange} />
       </div>
     </>
   );
