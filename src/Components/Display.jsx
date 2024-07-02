@@ -2,7 +2,7 @@ import Buttons from "./Buttons";
 
 
 
-const Display = ({ handleDrumPadClick, audioPath }) => {
+const Display = ({ handleDrumPadClick, audioPath, volumeChange, volume }) => {
   return (
     <>
       <div className="wrapper">
@@ -21,7 +21,7 @@ const Display = ({ handleDrumPadClick, audioPath }) => {
             ))}
           </div>
         </div>
-        <Buttons />
+        <Buttons volumeChange={volumeChange} volume={volume} />
       </div>
     </>
   );

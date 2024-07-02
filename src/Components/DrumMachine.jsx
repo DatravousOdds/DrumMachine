@@ -16,6 +16,11 @@ const DrumMachine = () => {
     { id: "C", src: "/audio/Heater-6.mp3" },
   ];
   const [drum, setDrum] = useState("");
+  const [vol, setVolume] = useState(1);
+
+  const handleVolumeChange = (e) => {
+    setVolume(e.target.value);
+  }
 
   const handleDrumPadClick = (event) => {
     const drumPad = event.currentTarget;
@@ -32,11 +37,13 @@ const DrumMachine = () => {
     }
   };
 
+  
+  
   return (
     <>
       <header>{header}</header>
       <div id="drum-machine">
-        <Display handleDrumPadClick={handleDrumPadClick} audioPath={audioPath} />
+        <Display handleDrumPadClick={handleDrumPadClick} audioPath={audioPath} volumeChange={handleVolumeChange} volume={vol}/>
       </div>
     </>
   );
