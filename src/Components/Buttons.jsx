@@ -37,7 +37,7 @@ const Buttons = ({ volumeChange, volume, handleSwitchChange }) => {
           </div>
 
           <div className="control" onClick={handleSwitchChange}>
-            <div style={{ fontWeight: 600 }}>Volume</div>
+            <div style={{ fontWeight: 600 }}>Bank</div>
             <div  className="select">
               <div className="inner"></div>
             </div>
