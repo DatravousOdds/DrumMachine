@@ -58,7 +58,6 @@ main {
 
     .control {
       display: flex;
-      // border: 1px solid red;
       flex-direction: column;
       margin: 1rem;
       text-align: center;
@@ -70,16 +69,31 @@ main {
         background: black;
         display: flex;
         align-items: center;
-        // justify-content: center;
+        position: relative; 
+        cursor: pointer;   
+        overflow: hidden;  
+        
 
 
         .inner {
-          // border: 1px solid green;
+          
           width: 30px;
           background-color: $primaryColor;
           height: 20px;
           border: 2px solid black;
+          position: absolute;
+          left: 0;
+          transition: transform 0.2s ease;
+
+          
+          &.active {
+          transform: translateX(100%);
+          transition: transform 0.2s ease;
+          }
+          
         }
+
+        
 
         .inner-right {
           width: 30px;

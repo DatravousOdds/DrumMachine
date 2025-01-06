@@ -1,8 +1,14 @@
 import { useRef } from "react";
 
-const Buttons = ({ volumeChange, volume, handleSwitchChange,  }) => {
- 
-  
+
+const Buttons = ({
+  volumeChange,
+  volume,
+  handlePowerSwitch,
+  handleBankSwitch,
+  powerSwitch,
+  bankSwitch,
+}) => {
   const smallBtnStyles = {
     display: "flex",
     justifyContent: "center",
@@ -15,11 +21,12 @@ const Buttons = ({ volumeChange, volume, handleSwitchChange,  }) => {
     <>
       <div className="btns-container">
         <div style={smallBtnStyles}>
-          
-          <div className="control" onClick={handleSwitchChange}>
+          <div className="control">
             <div style={{ fontWeight: 600 }}>Power</div>
-            <div onClick={powerSwitchChange}  className="select">
-              <div className="inner power"></div>
+            <div onClick={handlePowerSwitch} className="select">
+              <div
+                className={`inner power ${powerSwitch ? "active" : ''}`}
+              ></div>
               <div className="inner-right"></div>
             </div>
           </div>
@@ -38,10 +45,10 @@ const Buttons = ({ volumeChange, volume, handleSwitchChange,  }) => {
             />
           </div>
 
-          <div className="control" onClick={handleSwitchChange}>
+          <div className="control">
             <div style={{ fontWeight: 600 }}>Bank</div>
-            <div  className="select">
-              <div className="inner bank"></div>
+            <div onClick={handleBankSwitch} className="select">
+              <div className={`inner bank ${bankSwitch ? 'active' : ''}`}></div>
               <div className="inner-right"></div>
             </div>
           </div>
