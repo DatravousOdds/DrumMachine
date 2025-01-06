@@ -5,7 +5,10 @@ const Display = ({
   audioPath,
   volumeChange,
   volume,
-  handleSwitchChange,
+  handlePowerSwitch,
+  handleBankSwitch,
+  powerSwitch,
+  bankSwitch,
 }) => {
   return (
     <>
@@ -25,7 +28,14 @@ const Display = ({
             ))}
           </div>
         </div>
-        <Buttons volumeChange={volumeChange} volume={volume} handleSwitchChange={handleSwitchChange} />
+        <Buttons 
+          volumeChange={volumeChange}
+          volume={volume}
+          handlePowerSwitch={handlePowerSwitch}
+          handleBankSwitch={handleBankSwitch}
+          powerSwitch={powerSwitch}
+          bankSwitch={bankSwitch}
+          />
       </div>
     </>
   );

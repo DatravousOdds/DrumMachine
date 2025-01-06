@@ -18,18 +18,19 @@ const DrumMachine = () => {
   const [drum, setDrum] = useState("");
   const [vol, setVolume] = useState();
   const [powerSwitch, setPowerSwitch] = useState(false);
-  const [volumeSwitch, setVolumeSwitch] = useState(false);
+  const [bankSwitch, setBankSwitch] = useState(false);
+
+  // handles
 
   // handles switch toggle
-  const handleSwitchChange = () => {
-    if (!powerSwitch || !volumeSwitch) {
-      setPowerSwitch(true);
-      setVolumeSwitch(true);
-    }
-    setPowerSwitch(false);
-    setVolumeSwitch(false);
+  const handlePowerSwitch = () => {
+    setPowerSwitch(!powerSwitch);
   };
 
+  // Handle bank switch toggle
+  const handleBankSwitch = () => {
+    setBankSwitch(!bankSwitch);
+  };
   // handles volume change
   const handleVolumeChange = (e) => {
     const value = e.target.value;
@@ -61,7 +62,8 @@ const DrumMachine = () => {
           audioPath={audioPath}
           volumeChange={handleVolumeChange}
           volume={vol}
-          handleSwitchChange={handleSwitchChange}
+          handlePowerSwitch={handlePowerSwitch}
+          handleBankSwitch={handleBankSwitch}
         />
       </div>
     </>

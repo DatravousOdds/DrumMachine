@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const Buttons = ({ volumeChange, volume, handleSwitchChange }) => {
+const Buttons = ({ volumeChange, volume, handleSwitchChange,  }) => {
  
   
   const smallBtnStyles = {
@@ -15,10 +15,12 @@ const Buttons = ({ volumeChange, volume, handleSwitchChange }) => {
     <>
       <div className="btns-container">
         <div style={smallBtnStyles}>
+          
           <div className="control" onClick={handleSwitchChange}>
             <div style={{ fontWeight: 600 }}>Power</div>
-            <div  className="select">
-              <div className="inner"></div>
+            <div onClick={powerSwitchChange}  className="select">
+              <div className="inner power"></div>
+              <div className="inner-right"></div>
             </div>
           </div>
 
@@ -39,7 +41,8 @@ const Buttons = ({ volumeChange, volume, handleSwitchChange }) => {
           <div className="control" onClick={handleSwitchChange}>
             <div style={{ fontWeight: 600 }}>Bank</div>
             <div  className="select">
-              <div className="inner"></div>
+              <div className="inner bank"></div>
+              <div className="inner-right"></div>
             </div>
           </div>
         </div>

@@ -80,6 +80,20 @@ main {
           height: 20px;
           border: 2px solid black;
         }
+
+        .inner-right {
+          width: 30px;
+          background-color: $primaryColor;
+          height: 20px;
+          border: 2px solid black;
+          display: none;
+        }
+
+        
+
+        .bank {
+          display: flex;
+        }
       }
     }
   }
