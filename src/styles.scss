@@ -72,6 +72,8 @@ main {
         position: relative; 
         cursor: pointer;   
         overflow: hidden;  
+
+        
         
 
 
@@ -87,8 +89,17 @@ main {
 
           
           &.active {
-          transform: translateX(100%);
+          transform: translateX(30px);
           transition: transform 0.2s ease;
+          }
+
+          &.power.active {
+            background-color: #00ff00;
+          }
+
+          &.bank.active {
+            background-color: #ff9900;
+              
           }
           
         }
@@ -96,10 +107,7 @@ main {
         
 
         .inner-right {
-          width: 30px;
-          background-color: $primaryColor;
-          height: 20px;
-          border: 2px solid black;
+          
           display: none;
         }
 

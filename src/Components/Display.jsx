@@ -9,6 +9,7 @@ const Display = ({
   handleBankSwitch,
   powerSwitch,
   bankSwitch,
+  currentSound
 }) => {
   return (
     <>
@@ -35,6 +36,7 @@ const Display = ({
           handleBankSwitch={handleBankSwitch}
           powerSwitch={powerSwitch}
           bankSwitch={bankSwitch}
+          currentSound={currentSound}
           />
       </div>
     </>
