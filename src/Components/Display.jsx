@@ -9,27 +9,27 @@ const Display = ({
   handleBankSwitch,
   powerSwitch,
   bankSwitch,
-  currentSound
+  currentSound,
 }) => {
   return (
     <>
-      <div className="wrapper">
+      <div id="display" className="wrapper">
         <div className="drumpalette">
-          <div className="drumpalette-container">
-            {audioPath.map((pad) => (
+          <div id="drum-pads" className="drumpalette-container">
+            {audioPath.map((sound) => (
               <div
-                key={pad.id}
-                id={pad.id}
+                key={sound.id}
+                id={sound.id}
                 className="drum-pad"
                 onClick={handleDrumPadClick}
               >
-                <audio src={pad.src}></audio>
-                {pad.id}
+                {sound.id}
+                <audio className="clip" src={sound.src}></audio>
               </div>
             ))}
           </div>
         </div>
-        <Buttons 
+        <Buttons
           volumeChange={volumeChange}
           volume={volume}
           handlePowerSwitch={handlePowerSwitch}
@@ -37,7 +37,7 @@ const Display = ({
           powerSwitch={powerSwitch}
           bankSwitch={bankSwitch}
           currentSound={currentSound}
-          />
+        />
       </div>
     </>
   );

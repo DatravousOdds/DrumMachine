@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 
 const DrumMachine = () => {
   const header = "Drum Machine App";
-  const audioPath = [
+  let audioPath = [
     { id: "Q", src: "/audio/Heater-1.mp3", name: "Chord 1" },
     { id: "W", src: "/audio/Heater-2.mp3", name: "Chord 2" },
     { id: "E", src: "/audio/Heater-3.mp3", name: "Chord 3" },
@@ -12,7 +12,7 @@ const DrumMachine = () => {
     { id: "S", src: "/audio/Cev_H2.mp3", name: "Open HH" },
     { id: "D", src: "/audio/Dsc_Oh.mp3", name: "Closed HH" },
     { id: "Z", src: "/audio/Kick_n_Hat.mp3", name: "Punchy Kick" },
-    { id: "X", src: "/audiopath/RP4_KICK_1.mp3", name: "Side Stick" },
+    { id: "X", src: "/audio/RP4_KICK_1.mp3", name: "Side Stick" },
     { id: "C", src: "/audio/Heater-6.mp3", name: "Snare" },
   ];
   const [drum, setDrum] = useState("");
@@ -35,8 +35,6 @@ const DrumMachine = () => {
     if (powerSwitch) {
       setBankSwitch(!bankSwitch);
       setCurrentSound(bankSwitch ? "Heater Kit" : "Smooth Plano Kit");
-      if (currentSound == "Smooth Plano Kit") {
-      }
     }
   };
   // handles volume change
@@ -55,24 +53,24 @@ const DrumMachine = () => {
 
   // handles drum pad interactions
   const handleDrumPadClick = (event) => {
+    if (!powerSwitch) return;
     const drumPad = event.currentTarget;
-    console.log(drumPad);
+
     const audio = drumPad.querySelector("audio");
-    const audioName = drumPad.id;
-    if (audio) {
-      audio.play();
-    }
 
-    if (audioName) {
-      const soundName = audioPath.find((name) => name.id === audioName);
-      console.log(soundName.name);
-      setCurrentSound(soundName.name);
+    const audioName = drumPad.id; // This is the letter (Q, W, E, etc.)
 
-      // Cler the display after 1 second
-      setTimeout(() => {
-        setCurrentSound("");
-      }, 1000);
-    }
+    audio.volume = vol / 100; // Set the volume based on the slider value
+
+    audio.currentTime = 0; // Reset the audio to the beginning
+    audio.play();
+
+    const soundInfo = audioPath.find((sound) => sound.id === audioName);
+    setCurrentSound(soundInfo.name);
+
+    setTimeout(() => {
+      setCurrentSound("");
+    }, 1000);
   };
 
   return (
