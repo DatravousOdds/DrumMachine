@@ -5,15 +5,15 @@ import { useState, useRef } from "react";
 const DrumMachine = () => {
   const header = "Drum Machine App";
   const audioPath = [
-    { id: "Q", src: "/audio/Heater-1.mp3", name: "Heater 1" },
-    { id: "W", src: "/audio/Heater-2.mp3", name: "Heater 2" },
-    { id: "E", src: "/audio/Heater-3.mp3", name: "Heater 3" },
-    { id: "A", src: "/audio/Heater-4_1.mp3", name: "Heater 4" },
-    { id: "S", src: "/audio/Cev_H2.mp3", name: "Cev H2" },
-    { id: "D", src: "/audio/Dsc_Oh.mp3", name: "Dsc Oh" },
-    { id: "Z", src: "/audio/Kick_n_Hat.mp3", name: "Kick n Hat" },
-    { id: "X", src: "/audiopath/RP4_KICK_1.mp3", name: "Kick" },
-    { id: "C", src: "/audio/Heater-6.mp3", name: "Heater 6" },
+    { id: "Q", src: "/audio/Heater-1.mp3", name: "Chord 1" },
+    { id: "W", src: "/audio/Heater-2.mp3", name: "Chord 2" },
+    { id: "E", src: "/audio/Heater-3.mp3", name: "Chord 3" },
+    { id: "A", src: "/audio/Heater-4_1.mp3", name: "Shaker" },
+    { id: "S", src: "/audio/Cev_H2.mp3", name: "Open HH" },
+    { id: "D", src: "/audio/Dsc_Oh.mp3", name: "Closed HH" },
+    { id: "Z", src: "/audio/Kick_n_Hat.mp3", name: "Punchy Kick" },
+    { id: "X", src: "/audiopath/RP4_KICK_1.mp3", name: "Side Stick" },
+    { id: "C", src: "/audio/Heater-6.mp3", name: "Snare" },
   ];
   const [drum, setDrum] = useState("");
   const [vol, setVolume] = useState(50);
@@ -35,6 +35,8 @@ const DrumMachine = () => {
     if (powerSwitch) {
       setBankSwitch(!bankSwitch);
       setCurrentSound(bankSwitch ? "Heater Kit" : "Smooth Plano Kit");
+      if (currentSound == "Smooth Plano Kit") {
+      }
     }
   };
   // handles volume change
@@ -65,6 +67,11 @@ const DrumMachine = () => {
       const soundName = audioPath.find((name) => name.id === audioName);
       console.log(soundName.name);
       setCurrentSound(soundName.name);
+
+      // Cler the display after 1 second
+      setTimeout(() => {
+        setCurrentSound("");
+      }, 1000);
     }
   };
 
