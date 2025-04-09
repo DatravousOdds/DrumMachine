@@ -24,7 +24,7 @@ const Display = ({
                 onClick={handleDrumPadClick}
               >
                 {sound.id}
-                <audio className="clip" src={sound.src}></audio>
+                <audio className="clip" src={sound.src} id={sound.id}></audio>
               </div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 import Display from "./Display";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const DrumMachine = () => {
   const header = "Drum Machine App";
@@ -20,6 +20,39 @@ const DrumMachine = () => {
   const [powerSwitch, setPowerSwitch] = useState(true);
   const [bankSwitch, setBankSwitch] = useState(false);
   const [currentSound, setCurrentSound] = useState("");
+
+  // Add useEffect to handle key presses
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (!powerSwitch) return;
+      const key = event.key.toUpperCase();
+      console.log("Key pressed:", key);
+      const soundInfo = audioPath.find((sound) => sound.id === key);
+      console.log("Sound info:", soundInfo);
+      if (soundInfo) {
+        const drumPad = document.getElementById(key);
+        if (drumPad) {
+          const audio = drumPad.querySelector("audio");
+          if (audio) {
+            audio.volume = vol / 100;
+            audio.currentTime = 0;
+            audio.play();
+            setCurrentSound(soundInfo.name);
+            setTimeout(() => {
+              setCurrentSound("");
+            }, 1000);
+          }
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    // Cleanup up the event listener on component unmount
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [powerSwitch, vol, audioPath]);
 
   // handles switch toggle
   const handlePowerSwitch = () => {
